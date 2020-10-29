@@ -6,4 +6,27 @@
 
 
 
-{% block body %} Estimate a tank today{% endblock %}
+
+{% block body %} 
+<h2> Create An Estimate </h2>
+<br>
+<br>
+
+<form method="POST" action="/tankCalc" id=calculateCost>
+    <label for="height">Height:</label><br>
+    <input type="text" id="height" name="height" placeholder="in Feet"><br>
+    <label for="radius">Radius:</label><br>
+    <input type="text" id="radius" name="radius" placeholder="in Feet"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+
+  <br>
+  <br>
+
+  {% if tankCalc %}
+    <p>the price of your tank will be: {{tankCalc}}</p>
+  {% endif%}
+
+
+{% endblock %}
